@@ -1,0 +1,18 @@
+{
+    "name": "kevintweber/ktw-gauges-bundle",
+    "description": "Symfony bundle for the Gauges API.",
+    "keywords": ["Symfony", "Gauges", "API"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kevin Weber",
+            "email": "kevintweber@gmail.com"
+        }
+    ],
+    "require": {
+        "kevintweber/gauges": "~0.1"
+    },
+    "autoload": {
+        "psr-4": { "Kevintweber\\KtwGaugesBundle\\": ""}
+    }
+}
