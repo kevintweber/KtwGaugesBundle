@@ -26,15 +26,18 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('token')
-                    ->isRequired()
-                    ->cannotBeEmpty()
-                ->end()
-                ->scalarNode('timeout')
+                ->scalarNode('log_format')
                     ->defaultNull()
                 ->end()
                 ->scalarNode('proxy')
                     ->defaultNull()
+                ->end()
+                ->scalarNode('timeout')
+                    ->defaultNull()
+                ->end()
+                ->scalarNode('token')
+                    ->isRequired()
+                    ->cannotBeEmpty()
                 ->end()
             ->end();
 

@@ -4,9 +4,25 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!-- <parameters> -->
-    <!-- </parameters> -->
+    <parameters>
+        <parameter key="ktw_gauges.request.class">Kevintweber\Gauges\Request</parameter>
+        <parameter key="ktw_gauges.factory.class">Kevintweber\KtwGaugesBundle\Factory\RequestFactory</parameter>
+        <parameter key="ktw_gauges.log_format" />
+        <parameter key="ktw_gauges.proxy" />
+        <parameter key="ktw_gauges.timeout" />
+        <parameter key="ktw_gauges.token" />
+    </parameters>
 
-    <!-- <services> -->
-    <!-- </services> -->
+    <services>
+        <service id="ktw_gauges.request"
+                 class="%ktw_gauges.request.class%"
+                 factory-class="%ktw_gauges.factory.class%"
+                 factory-method="createRequest">
+            <argument>%ktw_gauges.log_format%</argument>
+            <argument>%ktw_gauges.proxy%</argument>
+            <argument>%ktw_gauges.timeout%</argument>
+            <argument>%ktw_gauges.token%</argument>
+            <argument type="service" id="logger" on-invalid="ignore"/>
+        </service>
+    </services>
 </container>

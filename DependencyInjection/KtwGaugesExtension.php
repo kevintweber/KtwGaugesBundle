@@ -29,5 +29,10 @@ class KtwGaugesExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+
+        $container->setParameter('ktw_gauges.log_format', $config['log_format']);
+        $container->setParameter('ktw_gauges.proxy', $config['proxy']);
+        $container->setParameter('ktw_gauges.timeout', $config['timeout']);
+        $container->setParameter('ktw_gauges.token', $config['token']);
     }
 }
